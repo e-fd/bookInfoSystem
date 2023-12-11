@@ -28,12 +28,18 @@ namespace KProject
             comboBox1.Items.Add("Мифы и легенды");
             comboBox1.SelectedIndex = 0;            
         }
-
+        public void SetAuthor(string Author)
+        {
+            textBox2.Text = Author;
+        }
         public string? ReturnAutor()
         {
             return textBox2.Text;
         }
-
+        public void SetTitle(string Title)
+        {
+            textBox1.Text = Title;
+        }
         public string? ReturnTitle()
         {
             return textBox1.Text;
