@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lenaf\\oop\\KProject\\KProject\\KProject.csproj": {}
+    "C:\\Users\\User\\source\\repos\\KProject\\KProject\\KProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lenaf\\oop\\KProject\\KProject\\KProject.csproj": {
+    "C:\\Users\\User\\source\\repos\\KProject\\KProject\\KProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lenaf\\oop\\KProject\\KProject\\KProject.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\KProject\\KProject\\KProject.csproj",
         "projectName": "KProject",
-        "projectPath": "C:\\Users\\lenaf\\oop\\KProject\\KProject\\KProject.csproj",
-        "packagesPath": "C:\\Users\\lenaf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lenaf\\oop\\KProject\\KProject\\obj\\",
+        "projectPath": "C:\\Users\\User\\source\\repos\\KProject\\KProject\\KProject.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\KProject\\KProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lenaf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

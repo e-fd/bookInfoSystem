@@ -12,6 +12,7 @@ namespace KProject
 {
     public partial class AddBook : Form
     {
+        bool Flag = false;
         public AddBook()
         {
             InitializeComponent();
@@ -25,18 +26,33 @@ namespace KProject
             comboBox1.Items.Add("Научная фантастика");
             comboBox1.Items.Add("Биография и мемуары");
             comboBox1.Items.Add("Мифы и легенды");
-            comboBox1.SelectedIndex = 0;
+            comboBox1.SelectedIndex = 0;            
         }
 
+        public string? ReturnAutor()
+        {
+            return textBox2.Text;
+        }
+
+        public string? ReturnTitle()
+        {
+            return textBox1.Text;
+        }
+
+        public bool ReturnFlag()
+        {
+            return Flag;
+        }
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Book book = new Book(textBox1.Text, textBox2.Text, richTextBox1.Text, comboBox1.SelectedText);
-            Form1.books[book.BookId] = book;
+            Flag = true;
+            this.Hide();
         }
     }
 }
