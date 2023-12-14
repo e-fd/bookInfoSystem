@@ -18,15 +18,23 @@ namespace KProject
         {
             InitializeComponent(); // инициализация компонента - открытие окна, загрузка элементов
             comboBox1.Items.Clear(); // очистка списка жанров книг
-            comboBox1.Items.Add("Неизвестно");          // добавление жанров книг
-            comboBox1.Items.Add("Проза");               //
-            comboBox1.Items.Add("Поэзия");              //
-            comboBox1.Items.Add("Приключения");         //
-            comboBox1.Items.Add("Драма");               //
-            comboBox1.Items.Add("Фэнтези");             //
-            comboBox1.Items.Add("Научная фантастика");  //
-            comboBox1.Items.Add("Биография и мемуары"); //
-            comboBox1.Items.Add("Мифы и легенды");      //
+            comboBox1.Items.Add("Неизвестно");                 // добавление жанров книг
+            comboBox1.Items.Add("Роман-эпопея");               //
+            comboBox1.Items.Add("Роман");                      //
+            comboBox1.Items.Add("Повесть");                    //
+            comboBox1.Items.Add("Рассказ");                    //
+            comboBox1.Items.Add("Притча");                     //
+            comboBox1.Items.Add("Лирическое стихотворение");   //
+            comboBox1.Items.Add("Элегия");                     //
+            comboBox1.Items.Add("Послание");                   //
+            comboBox1.Items.Add("Эпиграмма");                  //
+            comboBox1.Items.Add("Ода");                        //
+            comboBox1.Items.Add("Сонет");                      //
+            comboBox1.Items.Add("Комедия");                    //
+            comboBox1.Items.Add("Трагедия");                   //
+            comboBox1.Items.Add("Драма");                      //
+            comboBox1.Items.Add("Поэма");                      //
+            comboBox1.Items.Add("Баллада");                    //
             comboBox1.SelectedIndex = 0;                // индекс изначально выбранного элемента
         }
         public void SetTitle(string Title) // (1) метод для присвоения значения

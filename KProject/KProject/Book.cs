@@ -8,6 +8,7 @@ namespace KProject
 {
     internal class Book
     {
+        private int listIndex;      // 
         private static int bookCounter; // статический счетчик книг
         public int BookId { get; set; }          // свойства объектов класса Book
         public string? Title { get; set; }       //
@@ -23,15 +24,31 @@ namespace KProject
         {                                        // вызов предыдущего
             Author = author;                     // конструктора
         }
-        public Book(string? title, string? author, string? description) : 
+        public Book(string? title, string? author, string? genre) : 
             this(title, author) // (1)
+        {
+            Genre = genre;
+        }
+        public Book(string? title, string? author, string? genre, string? description) : 
+            this(title, author, genre) // (1)
         {
             Description = description;
         }
-        public Book(string? title, string? author, string? description, string? genre) : 
-            this(title, author, description) // (1)
+        public int GetListIndex()
         {
-            Genre = genre;
+            return listIndex;
+        }
+        public void SetListIndex(int value)
+        {
+            listIndex = value;
+        }
+        public int GetBookCounter()
+        {
+            return bookCounter;
+        }
+        public void SetBookCounter(int value)
+        {
+            bookCounter = value;
         }
         public void BookInfo(out int bookId, out string? title, out string? author, 
                                 out string? description, out string? genre) // ?  .
