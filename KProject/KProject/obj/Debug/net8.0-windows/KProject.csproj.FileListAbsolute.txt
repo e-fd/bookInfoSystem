@@ -39,7 +39,6 @@ C:\Users\lenaf\oop\kursPr\KProject\KProject\bin\Debug\net8.0-windows\KProject.dl
 C:\Users\lenaf\oop\kursPr\KProject\KProject\bin\Debug\net8.0-windows\KProject.pdb
 C:\Users\lenaf\oop\kursPr\KProject\KProject\obj\Debug\net8.0-windows\KProject.Form1.resources
 C:\Users\lenaf\oop\kursPr\KProject\KProject\obj\Debug\net8.0-windows\KProject.AddBook.resources
-C:\Users\lenaf\oop\kursPr\KProject\KProject\obj\Debug\net8.0-windows\KProject.Form3.resources
 C:\Users\lenaf\oop\kursPr\KProject\KProject\obj\Debug\net8.0-windows\KProject.csproj.GenerateResource.cache
 C:\Users\lenaf\oop\kursPr\KProject\KProject\obj\Debug\net8.0-windows\KProject.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\lenaf\oop\kursPr\KProject\KProject\obj\Debug\net8.0-windows\KProject.AssemblyInfoInputs.cache
@@ -51,3 +50,4 @@ C:\Users\lenaf\oop\kursPr\KProject\KProject\obj\Debug\net8.0-windows\refint\KPro
 C:\Users\lenaf\oop\kursPr\KProject\KProject\obj\Debug\net8.0-windows\KProject.pdb
 C:\Users\lenaf\oop\kursPr\KProject\KProject\obj\Debug\net8.0-windows\KProject.genruntimeconfig.cache
 C:\Users\lenaf\oop\kursPr\KProject\KProject\obj\Debug\net8.0-windows\ref\KProject.dll
+C:\Users\lenaf\oop\kursPr\KProject\KProject\obj\Debug\net8.0-windows\KProject.About.resources

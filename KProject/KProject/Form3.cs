@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace KProject
 {
-    public partial class Form3 : Form
+    public partial class About : Form
     {
-        public Form3()
+        public About()
         {
             InitializeComponent();
         }

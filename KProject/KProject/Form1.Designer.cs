@@ -138,12 +138,14 @@ namespace KProject
             удалитьКнигуToolStripMenuItem.Name = "удалитьКнигуToolStripMenuItem";
             удалитьКнигуToolStripMenuItem.Size = new Size(236, 26);
             удалитьКнигуToolStripMenuItem.Text = "Удалить книгу";
+            удалитьКнигуToolStripMenuItem.Click += удалитьКнигуToolStripMenuItem_Click;
             // 
             // оПрограммеToolStripMenuItem
             // 
             оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
             оПрограммеToolStripMenuItem.Size = new Size(118, 24);
             оПрограммеToolStripMenuItem.Text = "О программе";
+            оПрограммеToolStripMenuItem.Click += оПрограммеToolStripMenuItem_Click;
             // 
             // statusStrip1
             // 
@@ -219,6 +221,7 @@ namespace KProject
             button2.TabIndex = 9;
             button2.Text = "Поиск";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // label2
             // 
@@ -246,6 +249,7 @@ namespace KProject
             button3.TabIndex = 12;
             button3.Text = "Поиск";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // label3
             // 
