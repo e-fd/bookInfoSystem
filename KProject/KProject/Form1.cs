@@ -60,6 +60,7 @@ namespace KProject
                         }
                     }
                 }
+                toolStripStatusLabel3.Text = "Ёлементов: " + listBox1.Items.Count;
             }
             catch { } // файл Ѕƒ не загрузитс€ в случае ошибки; список книг окажетс€ пустым
         }
@@ -198,10 +199,6 @@ namespace KProject
                 addBook.SetAuthor(books[index].Author);           //
                 addBook.SetGenre(books[index].Genre);             //
                 addBook.SetDescription(books[index].Description); //
-                //addBook.SetTitle(books[index - 1].Title);             // новой книги заданных значений
-                //addBook.SetAuthor(books[index - 1].Author);           //
-                //addBook.SetGenre(books[index - 1].Genre);             //
-                //addBook.SetDescription(books[index - 1].Description); //
                 addBook.ShowDialog();                             // открытие окна ƒобавление новой книги
                 if (addBook.ReturnFlag())                         // если кнопка "ƒобавить" была нажата
                 {
@@ -209,12 +206,6 @@ namespace KProject
                     books[index].Author = addBook.ReturnAutor();            // элемента массива
                     books[index].Genre = addBook.ReturnGenre();             // 
                     books[index].Description = addBook.ReturnDescription(); //
-                    //books[index - 1].Title = addBook.ReturnTitle();             // изменение значений полей выбранного 
-                    //books[index - 1].Author = addBook.ReturnAutor();            // элемента массива
-                    //books[index - 1].Genre = addBook.ReturnGenre();             // 
-                    //books[index - 1].Description = addBook.ReturnDescription(); //
-                    //listBox1.Items.Insert(index, " \"" + books[index].Title + "\"  " + books[index].Author);
-                    //listBox1.Items.Remove(index + 1);
                     listBox1.Items.Clear();         // очистка списка книг
                     foreach (var book in books) // дл€ каждого элемента (book) массива books
                     {
@@ -224,6 +215,7 @@ namespace KProject
                             book.SetListIndex(listBox1.Items.Count);
                         }
                     }
+                    toolStripStatusLabel3.Text = "Ёлементов: " + listBox1.Items.Count;
                 }
             }
             addBook.Close(); // закрытие окна ƒобавление новой книги
@@ -251,6 +243,12 @@ namespace KProject
                         if (bookRemove == true)
                         {
                             books[i] = books[i + 1];
+                            if (books[i] != null)
+                            {
+                                books[i].BookId--;
+                                int n = books[i].GetListIndex() - 1;
+                                books[i].SetListIndex(n);
+                            }
                         }
                     }
                     i++;
@@ -266,6 +264,7 @@ namespace KProject
                         book.SetListIndex(listBox1.Items.Count);
                     }
                 }
+                toolStripStatusLabel3.Text = "Ёлементов: " + listBox1.Items.Count;
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -283,6 +282,7 @@ namespace KProject
                             listBox1.Items.Add(" \"" + book.Title + "\"  " + book.Author);
                             book.SetListIndex(listBox1.Items.Count);
                         }
+                        toolStripStatusLabel3.Text = "Ёлементов: " + listBox1.Items.Count;
                     }
                 }
             }
@@ -297,6 +297,7 @@ namespace KProject
                         book.SetListIndex(listBox1.Items.Count);
                     }
                 }
+                toolStripStatusLabel3.Text = "Ёлементов: " + listBox1.Items.Count;
             }
         }
 
@@ -315,6 +316,7 @@ namespace KProject
                             listBox1.Items.Add(" \"" + book.Title + "\"  " + book.Author);
                             book.SetListIndex(listBox1.Items.Count);
                         }
+                        toolStripStatusLabel3.Text = "Ёлементов: " + listBox1.Items.Count;
                     }
                 }
             }
@@ -329,6 +331,7 @@ namespace KProject
                         book.SetListIndex(listBox1.Items.Count);
                     }
                 }
+                toolStripStatusLabel3.Text = "Ёлементов: " + listBox1.Items.Count;
             }
         }
 
@@ -347,6 +350,7 @@ namespace KProject
                             listBox1.Items.Add(" \"" + book.Title + "\"  " + book.Author);
                             book.SetListIndex(listBox1.Items.Count);
                         }
+                        toolStripStatusLabel3.Text = "Ёлементов: " + listBox1.Items.Count;
                     }
                 }
             }
@@ -361,6 +365,7 @@ namespace KProject
                         book.SetListIndex(listBox1.Items.Count);
                     }
                 }
+                toolStripStatusLabel3.Text = "Ёлементов: " + listBox1.Items.Count;
             }
 
         }
@@ -369,6 +374,49 @@ namespace KProject
         {
             About about = new About();
             about.ShowDialog();
+        }
+
+        private void chosenParameterSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clearTextBox_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            comboBox1.SelectedIndex = 0;
+            listBox1.Items.Clear();         // очистка списка книг
+            foreach (var book in books) // дл€ каждого элемента (book) массива books
+            {
+                if (book != null)       // если элемент book не пустой
+                {                       // запол€ем список книг, использу€ пол€ элементов массива books
+                    listBox1.Items.Add(" \"" + book.Title + "\"  " + book.Author);
+                    book.SetListIndex(listBox1.Items.Count);
+                }
+            }
+            toolStripStatusLabel3.Text = "Ёлементов: " + listBox1.Items.Count;
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = listBox1.SelectedItem as string;
+            int index = listBox1.SelectedIndex; // переменна€, которой присваиваетс€ значение 
+            if (index != -1)                    // индекса выбранной дл€ редактировани€ книги
+            {                                                     // присваивание текстовым пол€м окна ƒобавление
+                foreach (var book in books)
+                {
+                    if ((index + 1) == book.GetListIndex())
+                    {
+                        index = book.BookId;
+                        label8.Text = book.Title;             // новой книги заданных значений
+                        label9.Text = book.Author;             //
+                        label10.Text = book.Genre;             //
+                        textBox3.Text = book.Description;
+                        break;
+                    }
+                }
+            }
         }
     }
 
