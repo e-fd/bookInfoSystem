@@ -31,17 +31,17 @@ namespace KProject
         {
             menuStrip1 = new MenuStrip();
             файлToolStripMenuItem = new ToolStripMenuItem();
-            создатьToolStripMenuItem = new ToolStripMenuItem();
             открытьToolStripMenuItem = new ToolStripMenuItem();
             сохранитьToolStripMenuItem = new ToolStripMenuItem();
             выходToolStripMenuItem = new ToolStripMenuItem();
-            поискToolStripMenuItem = new ToolStripMenuItem();
             редактироватьToolStripMenuItem = new ToolStripMenuItem();
             добавитьКнигуToolStripMenuItem = new ToolStripMenuItem();
             редактироватьКнигуToolStripMenuItem = new ToolStripMenuItem();
             удалитьКнигуToolStripMenuItem = new ToolStripMenuItem();
             оПрограммеToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
+            toolStripStatusLabel3 = new ToolStripStatusLabel();
+            toolStripStatusLabel4 = new ToolStripStatusLabel();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             toolStripStatusLabel2 = new ToolStripStatusLabel();
             openFileDialog1 = new OpenFileDialog();
@@ -49,41 +49,45 @@ namespace KProject
             listBox1 = new ListBox();
             textBox1 = new TextBox();
             label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            searchByTitle = new Button();
+            searchByAuthor = new Button();
             label2 = new Label();
             textBox2 = new TextBox();
-            button3 = new Button();
+            searchByGenre = new Button();
             label3 = new Label();
             comboBox1 = new ComboBox();
-            button4 = new Button();
-            button5 = new Button();
+            clearTextBox = new Button();
+            chosenParameterSearch = new Button();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            label10 = new Label();
+            label9 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            textBox3 = new TextBox();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, поискToolStripMenuItem, редактироватьToolStripMenuItem, оПрограммеToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, редактироватьToolStripMenuItem, оПрограммеToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1000, 28);
+            menuStrip1.Size = new Size(919, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // файлToolStripMenuItem
             // 
-            файлToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { создатьToolStripMenuItem, открытьToolStripMenuItem, сохранитьToolStripMenuItem, выходToolStripMenuItem });
+            файлToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { открытьToolStripMenuItem, сохранитьToolStripMenuItem, выходToolStripMenuItem });
             файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             файлToolStripMenuItem.Size = new Size(59, 24);
             файлToolStripMenuItem.Text = "Файл";
-            // 
-            // создатьToolStripMenuItem
-            // 
-            создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-            создатьToolStripMenuItem.Size = new Size(166, 26);
-            создатьToolStripMenuItem.Text = "Создать";
             // 
             // открытьToolStripMenuItem
             // 
@@ -105,12 +109,6 @@ namespace KProject
             выходToolStripMenuItem.Size = new Size(166, 26);
             выходToolStripMenuItem.Text = "Выход";
             выходToolStripMenuItem.Click += выходToolStripMenuItem_Click;
-            // 
-            // поискToolStripMenuItem
-            // 
-            поискToolStripMenuItem.Name = "поискToolStripMenuItem";
-            поискToolStripMenuItem.Size = new Size(66, 24);
-            поискToolStripMenuItem.Text = "Поиск";
             // 
             // редактироватьToolStripMenuItem
             // 
@@ -150,18 +148,30 @@ namespace KProject
             // statusStrip1
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
-            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1, toolStripStatusLabel2 });
-            statusStrip1.Location = new Point(0, 480);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel3, toolStripStatusLabel4, toolStripStatusLabel1, toolStripStatusLabel2 });
+            statusStrip1.Location = new Point(0, 575);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(1000, 26);
+            statusStrip1.Size = new Size(919, 26);
             statusStrip1.TabIndex = 1;
             statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel3
+            // 
+            toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            toolStripStatusLabel3.Size = new Size(92, 20);
+            toolStripStatusLabel3.Text = "Элементов: ";
+            // 
+            // toolStripStatusLabel4
+            // 
+            toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            toolStripStatusLabel4.Size = new Size(25, 20);
+            toolStripStatusLabel4.Text = " |  ";
             // 
             // toolStripStatusLabel1
             // 
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(132, 20);
-            toolStripStatusLabel1.Text = "Выбранная книга";
+            toolStripStatusLabel1.Size = new Size(135, 20);
+            toolStripStatusLabel1.Text = "Выбранная книга:";
             // 
             // toolStripStatusLabel2
             // 
@@ -181,8 +191,9 @@ namespace KProject
             listBox1.Items.AddRange(new object[] { " " });
             listBox1.Location = new Point(467, 31);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(521, 436);
+            listBox1.Size = new Size(440, 526);
             listBox1.TabIndex = 3;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // textBox1
             // 
@@ -201,27 +212,27 @@ namespace KProject
             label1.TabIndex = 5;
             label1.Text = "Введите фамилию автора";
             // 
-            // button1
+            // searchByTitle
             // 
-            button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(351, 72);
-            button1.Name = "button1";
-            button1.Size = new Size(110, 29);
-            button1.TabIndex = 6;
-            button1.Text = "Поиск";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            searchByTitle.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchByTitle.Location = new Point(351, 72);
+            searchByTitle.Name = "searchByTitle";
+            searchByTitle.Size = new Size(110, 29);
+            searchByTitle.TabIndex = 6;
+            searchByTitle.Text = "Поиск";
+            searchByTitle.UseVisualStyleBackColor = true;
+            searchByTitle.Click += button1_Click;
             // 
-            // button2
+            // searchByAuthor
             // 
-            button2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(351, 118);
-            button2.Name = "button2";
-            button2.Size = new Size(110, 29);
-            button2.TabIndex = 9;
-            button2.Text = "Поиск";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            searchByAuthor.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchByAuthor.Location = new Point(351, 118);
+            searchByAuthor.Name = "searchByAuthor";
+            searchByAuthor.Size = new Size(110, 29);
+            searchByAuthor.TabIndex = 9;
+            searchByAuthor.Text = "Поиск";
+            searchByAuthor.UseVisualStyleBackColor = true;
+            searchByAuthor.Click += button2_Click;
             // 
             // label2
             // 
@@ -240,16 +251,16 @@ namespace KProject
             textBox2.Size = new Size(322, 24);
             textBox2.TabIndex = 7;
             // 
-            // button3
+            // searchByGenre
             // 
-            button3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.Location = new Point(351, 166);
-            button3.Name = "button3";
-            button3.Size = new Size(110, 29);
-            button3.TabIndex = 12;
-            button3.Text = "Поиск";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            searchByGenre.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchByGenre.Location = new Point(351, 166);
+            searchByGenre.Name = "searchByGenre";
+            searchByGenre.Size = new Size(110, 29);
+            searchByGenre.TabIndex = 12;
+            searchByGenre.Text = "Поиск";
+            searchByGenre.UseVisualStyleBackColor = true;
+            searchByGenre.Click += button3_Click;
             // 
             // label3
             // 
@@ -269,40 +280,146 @@ namespace KProject
             comboBox1.Size = new Size(323, 26);
             comboBox1.TabIndex = 13;
             // 
-            // button4
+            // clearTextBox
             // 
-            button4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button4.Location = new Point(224, 214);
-            button4.Name = "button4";
-            button4.Size = new Size(237, 29);
-            button4.TabIndex = 14;
-            button4.Text = "Очистить параметры поиска";
-            button4.UseVisualStyleBackColor = true;
+            clearTextBox.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            clearTextBox.Location = new Point(224, 214);
+            clearTextBox.Name = "clearTextBox";
+            clearTextBox.Size = new Size(237, 29);
+            clearTextBox.TabIndex = 14;
+            clearTextBox.Text = "Очистить параметры поиска";
+            clearTextBox.UseVisualStyleBackColor = true;
+            clearTextBox.Click += clearTextBox_Click;
             // 
-            // button5
+            // chosenParameterSearch
             // 
-            button5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button5.Location = new Point(224, 258);
-            button5.Name = "button5";
-            button5.Size = new Size(237, 29);
-            button5.TabIndex = 15;
-            button5.Text = "Поиск по всем параметрам";
-            button5.UseVisualStyleBackColor = true;
+            chosenParameterSearch.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            chosenParameterSearch.Location = new Point(224, 258);
+            chosenParameterSearch.Name = "chosenParameterSearch";
+            chosenParameterSearch.Size = new Size(237, 29);
+            chosenParameterSearch.TabIndex = 15;
+            chosenParameterSearch.Text = "Поиск по всем параметрам";
+            chosenParameterSearch.UseVisualStyleBackColor = true;
+            chosenParameterSearch.Click += chosenParameterSearch_Click;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 333F));
+            tableLayoutPanel1.Controls.Add(label10, 1, 2);
+            tableLayoutPanel1.Controls.Add(label9, 1, 1);
+            tableLayoutPanel1.Controls.Add(label4, 0, 0);
+            tableLayoutPanel1.Controls.Add(label5, 0, 1);
+            tableLayoutPanel1.Controls.Add(label6, 0, 2);
+            tableLayoutPanel1.Controls.Add(label7, 0, 3);
+            tableLayoutPanel1.Controls.Add(label8, 1, 0);
+            tableLayoutPanel1.Controls.Add(textBox3, 1, 3);
+            tableLayoutPanel1.Location = new Point(23, 293);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 47.7611923F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 52.2388077F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 173F));
+            tableLayoutPanel1.Size = new Size(438, 279);
+            tableLayoutPanel1.TabIndex = 16;
+            // 
+            // label10
+            // 
+            label10.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label10.AutoSize = true;
+            label10.Location = new Point(108, 87);
+            label10.Name = "label10";
+            label10.Size = new Size(327, 18);
+            label10.TabIndex = 6;
+            // 
+            // label9
+            // 
+            label9.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label9.AutoSize = true;
+            label9.Location = new Point(108, 49);
+            label9.Name = "label9";
+            label9.Size = new Size(327, 18);
+            label9.TabIndex = 5;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label4.AutoSize = true;
+            label4.Location = new Point(3, 14);
+            label4.Name = "label4";
+            label4.Size = new Size(99, 18);
+            label4.TabIndex = 0;
+            label4.Text = "Заголовок";
+            // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.Location = new Point(3, 49);
+            label5.Name = "label5";
+            label5.Size = new Size(99, 18);
+            label5.TabIndex = 1;
+            label5.Text = "Автор";
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.Location = new Point(3, 87);
+            label6.Name = "label6";
+            label6.Size = new Size(99, 18);
+            label6.TabIndex = 2;
+            label6.Text = "Жанр";
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label7.AutoSize = true;
+            label7.Location = new Point(3, 105);
+            label7.Name = "label7";
+            label7.Padding = new Padding(0, 10, 0, 0);
+            label7.Size = new Size(99, 28);
+            label7.TabIndex = 3;
+            label7.Text = "Аннотация";
+            // 
+            // label8
+            // 
+            label8.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label8.AutoSize = true;
+            label8.Location = new Point(108, 14);
+            label8.Name = "label8";
+            label8.Size = new Size(327, 18);
+            label8.TabIndex = 4;
+            // 
+            // textBox3
+            // 
+            textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBox3.Location = new Point(108, 108);
+            textBox3.Multiline = true;
+            textBox3.Name = "textBox3";
+            textBox3.ReadOnly = true;
+            textBox3.ScrollBars = ScrollBars.Both;
+            textBox3.Size = new Size(327, 168);
+            textBox3.TabIndex = 7;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1000, 506);
-            Controls.Add(button5);
-            Controls.Add(button4);
+            ClientSize = new Size(919, 601);
+            Controls.Add(tableLayoutPanel1);
+            Controls.Add(chosenParameterSearch);
+            Controls.Add(clearTextBox);
             Controls.Add(comboBox1);
-            Controls.Add(button3);
+            Controls.Add(searchByGenre);
             Controls.Add(label3);
-            Controls.Add(button2);
+            Controls.Add(searchByAuthor);
             Controls.Add(label2);
             Controls.Add(textBox2);
-            Controls.Add(button1);
+            Controls.Add(searchByTitle);
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(listBox1);
@@ -312,12 +429,14 @@ namespace KProject
             MainMenuStrip = menuStrip1;
             Margin = new Padding(4, 3, 4, 3);
             Name = "Form1";
-            Text = "Система поиска книг в библиотеке";
+            Text = "Информационно-справочная система библиотеки";
             FormClosing += Form1_FormClosing;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -331,11 +450,9 @@ namespace KProject
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem создатьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem поискToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem добавитьКнигуToolStripMenuItem;
@@ -349,14 +466,25 @@ namespace KProject
         private ListBox listBox1;
         private TextBox textBox1;
         private Label label1;
-        private Button button1;
-        private Button button2;
+        private Button searchByTitle;
+        private Button searchByAuthor;
         private Label label2;
         private TextBox textBox2;
-        private Button button3;
+        private Button searchByGenre;
         private Label label3;
         private ComboBox comboBox1;
-        private Button button4;
-        private Button button5;
+        private Button clearTextBox;
+        private Button chosenParameterSearch;
+        private ToolStripStatusLabel toolStripStatusLabel3;
+        private ToolStripStatusLabel toolStripStatusLabel4;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Label label10;
+        private Label label9;
+        private Label label8;
+        private TextBox textBox3;
     }
 }
