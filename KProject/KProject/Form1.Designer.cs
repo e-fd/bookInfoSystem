@@ -307,8 +307,8 @@ namespace KProject
             tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
             tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 333F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 67F));
             tableLayoutPanel1.Controls.Add(label10, 1, 2);
             tableLayoutPanel1.Controls.Add(label9, 1, 1);
             tableLayoutPanel1.Controls.Add(label4, 0, 0);
@@ -320,10 +320,10 @@ namespace KProject
             tableLayoutPanel1.Location = new Point(23, 293);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 4;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 47.7611923F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 52.2388077F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 173F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.Size = new Size(438, 279);
             tableLayoutPanel1.TabIndex = 16;
             // 
@@ -331,27 +331,30 @@ namespace KProject
             // 
             label10.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label10.AutoSize = true;
-            label10.Location = new Point(107, 85);
+            label10.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label10.Location = new Point(148, 43);
             label10.Name = "label10";
-            label10.Size = new Size(327, 18);
+            label10.Size = new Size(286, 20);
             label10.TabIndex = 6;
             // 
             // label9
             // 
             label9.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label9.AutoSize = true;
-            label9.Location = new Point(107, 46);
+            label9.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label9.Location = new Point(148, 22);
             label9.Name = "label9";
-            label9.Size = new Size(327, 18);
+            label9.Size = new Size(286, 20);
             label9.TabIndex = 5;
             // 
             // label4
             // 
             label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.Location = new Point(4, 13);
+            label4.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label4.Location = new Point(4, 1);
             label4.Name = "label4";
-            label4.Size = new Size(96, 18);
+            label4.Size = new Size(137, 20);
             label4.TabIndex = 0;
             label4.Text = "Заголовок";
             // 
@@ -359,9 +362,10 @@ namespace KProject
             // 
             label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Location = new Point(4, 46);
+            label5.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label5.Location = new Point(4, 22);
             label5.Name = "label5";
-            label5.Size = new Size(96, 18);
+            label5.Size = new Size(137, 20);
             label5.TabIndex = 1;
             label5.Text = "Автор";
             // 
@@ -369,9 +373,10 @@ namespace KProject
             // 
             label6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label6.AutoSize = true;
-            label6.Location = new Point(4, 85);
+            label6.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label6.Location = new Point(4, 43);
             label6.Name = "label6";
-            label6.Size = new Size(96, 18);
+            label6.Size = new Size(137, 20);
             label6.TabIndex = 2;
             label6.Text = "Жанр";
             // 
@@ -379,10 +384,11 @@ namespace KProject
             // 
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label7.AutoSize = true;
-            label7.Location = new Point(4, 104);
+            label7.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label7.Location = new Point(4, 64);
             label7.Name = "label7";
             label7.Padding = new Padding(0, 10, 0, 0);
-            label7.Size = new Size(96, 28);
+            label7.Size = new Size(137, 30);
             label7.TabIndex = 3;
             label7.Text = "Аннотация";
             // 
@@ -390,20 +396,22 @@ namespace KProject
             // 
             label8.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label8.AutoSize = true;
-            label8.Location = new Point(107, 13);
+            label8.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label8.Location = new Point(148, 1);
             label8.Name = "label8";
-            label8.Size = new Size(327, 18);
+            label8.Size = new Size(286, 20);
             label8.TabIndex = 4;
             // 
             // textBox3
             // 
             textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox3.Location = new Point(107, 107);
+            textBox3.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            textBox3.Location = new Point(148, 67);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;
             textBox3.ScrollBars = ScrollBars.Both;
-            textBox3.Size = new Size(327, 168);
+            textBox3.Size = new Size(286, 214);
             textBox3.TabIndex = 7;
             // 
             // Form1

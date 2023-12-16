@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lenaf\\oop\\kursPr\\KProject\\KProject\\KProject.csproj",
+      "projectUniqueName": "C:\\Users\\lenaf\\oop\\bookInfoSystem\\KProject\\KProject\\KProject.csproj",
       "projectName": "KProject",
-      "projectPath": "C:\\Users\\lenaf\\oop\\kursPr\\KProject\\KProject\\KProject.csproj",
+      "projectPath": "C:\\Users\\lenaf\\oop\\bookInfoSystem\\KProject\\KProject\\KProject.csproj",
       "packagesPath": "C:\\Users\\lenaf\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lenaf\\oop\\kursPr\\KProject\\KProject\\obj\\",
+      "outputPath": "C:\\Users\\lenaf\\oop\\bookInfoSystem\\KProject\\KProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lenaf\\AppData\\Roaming\\NuGet\\NuGet.Config",

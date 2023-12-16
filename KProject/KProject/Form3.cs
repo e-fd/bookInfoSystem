@@ -16,18 +16,18 @@ namespace KProject
         public About()
         {
             InitializeComponent(); // инициализация компонента - открытие окна, загрузка элементов
-            this.Text = String.Format("О программе {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Версия {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+            this.Text = String.Format("О программе {0}", AssemblyTitle);  // присвоение диалоговому окну названия
+            this.labelProductName.Text = AssemblyProduct;                           // заполнение элементов таблицы
+            this.labelVersion.Text = String.Format("Версия {0}", AssemblyVersion);  //
+            this.labelCopyright.Text = AssemblyCopyright;                           //
+            this.labelCompanyName.Text = AssemblyCompany;                           //
+            this.textBoxDescription.Text = AssemblyDescription;                     //
         }
 
         #region Методы доступа к атрибутам сборки
 
         public string AssemblyTitle
-        {
+        { // метод, возвращающий заголовок диалогового окна
             get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
@@ -44,7 +44,7 @@ namespace KProject
         }
 
         public string AssemblyVersion
-        {
+        { // метод, возвращающий версию сборки
             get
             {
                 return Assembly.GetExecutingAssembly().GetName().Version.ToString();
@@ -52,7 +52,7 @@ namespace KProject
         }
 
         public string AssemblyDescription
-        {
+        { // метод, возвращающий описание сборки
             get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
@@ -65,7 +65,7 @@ namespace KProject
         }
 
         public string AssemblyProduct
-        {
+        { // метод, возвращающий название сборки
             get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyProductAttribute), false);
@@ -78,7 +78,7 @@ namespace KProject
         }
 
         public string AssemblyCopyright
-        {
+        { // метод, возвращающий авторские права
             get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
@@ -91,7 +91,7 @@ namespace KProject
         }
 
         public string AssemblyCompany
-        {
+        { // // метод, возвращающий название компании
             get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);

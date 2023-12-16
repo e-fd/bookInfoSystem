@@ -11,11 +11,13 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("KProject")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("e-fd")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyCopyrightAttribute("Московский Политех")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("Информационно-справочная система библиотеки")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08b2949c80b31893fd07f10485b9e400a4e9cc93")]
-[assembly: System.Reflection.AssemblyProductAttribute("KProject")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+facb9a8250d39c1c05d0220533785b660d4f5a46")]
+[assembly: System.Reflection.AssemblyProductAttribute("bookInfoSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
