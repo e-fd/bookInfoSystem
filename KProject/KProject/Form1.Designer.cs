@@ -304,7 +304,8 @@ namespace KProject
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 333F));
@@ -330,7 +331,7 @@ namespace KProject
             // 
             label10.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label10.AutoSize = true;
-            label10.Location = new Point(108, 87);
+            label10.Location = new Point(107, 85);
             label10.Name = "label10";
             label10.Size = new Size(327, 18);
             label10.TabIndex = 6;
@@ -339,7 +340,7 @@ namespace KProject
             // 
             label9.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label9.AutoSize = true;
-            label9.Location = new Point(108, 49);
+            label9.Location = new Point(107, 46);
             label9.Name = "label9";
             label9.Size = new Size(327, 18);
             label9.TabIndex = 5;
@@ -348,9 +349,9 @@ namespace KProject
             // 
             label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.Location = new Point(3, 14);
+            label4.Location = new Point(4, 13);
             label4.Name = "label4";
-            label4.Size = new Size(99, 18);
+            label4.Size = new Size(96, 18);
             label4.TabIndex = 0;
             label4.Text = "Заголовок";
             // 
@@ -358,9 +359,9 @@ namespace KProject
             // 
             label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Location = new Point(3, 49);
+            label5.Location = new Point(4, 46);
             label5.Name = "label5";
-            label5.Size = new Size(99, 18);
+            label5.Size = new Size(96, 18);
             label5.TabIndex = 1;
             label5.Text = "Автор";
             // 
@@ -368,9 +369,9 @@ namespace KProject
             // 
             label6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label6.AutoSize = true;
-            label6.Location = new Point(3, 87);
+            label6.Location = new Point(4, 85);
             label6.Name = "label6";
-            label6.Size = new Size(99, 18);
+            label6.Size = new Size(96, 18);
             label6.TabIndex = 2;
             label6.Text = "Жанр";
             // 
@@ -378,10 +379,10 @@ namespace KProject
             // 
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label7.AutoSize = true;
-            label7.Location = new Point(3, 105);
+            label7.Location = new Point(4, 104);
             label7.Name = "label7";
             label7.Padding = new Padding(0, 10, 0, 0);
-            label7.Size = new Size(99, 28);
+            label7.Size = new Size(96, 28);
             label7.TabIndex = 3;
             label7.Text = "Аннотация";
             // 
@@ -389,7 +390,7 @@ namespace KProject
             // 
             label8.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label8.AutoSize = true;
-            label8.Location = new Point(108, 14);
+            label8.Location = new Point(107, 13);
             label8.Name = "label8";
             label8.Size = new Size(327, 18);
             label8.TabIndex = 4;
@@ -397,7 +398,7 @@ namespace KProject
             // textBox3
             // 
             textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox3.Location = new Point(108, 108);
+            textBox3.Location = new Point(107, 107);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;

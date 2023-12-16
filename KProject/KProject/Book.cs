@@ -8,7 +8,7 @@ namespace KProject
 {
     internal class Book
     {
-        private int listIndex;      // 
+        private int listIndex;          // индекс объекта в списке listBox1 (Form1)
         private static int bookCounter; // статический счетчик книг
         public int BookId { get; set; }          // свойства объектов класса Book
         public string? Title { get; set; }       //
@@ -34,30 +34,30 @@ namespace KProject
         {
             Description = description;
         }
-        public int GetListIndex()
+        public int GetListIndex() // возврат значения переменной listIndex
         {
             return listIndex;
         }
-        public void SetListIndex(int value)
+        public void SetListIndex(int value) // установка значения переменной listIndex
         {
             listIndex = value;
         }
-        public int GetBookCounter()
+        public int GetBookCounter() // возврат значения переменной bookCounter
         {
             return bookCounter;
         }
-        public void SetBookCounter(int value)
+        public void SetBookCounter(int value) // установка значения переменной bookCounter
         {
             bookCounter = value;
         }
-        public void BookInfo(out int bookId, out string? title, out string? author, 
-                                out string? description, out string? genre) // ?  .
-        {
-            bookId = BookId; 
-            title = Title;
-            author = Author;
-            description = Description;
-            genre = Genre;
-        }
+        //public void BookInfo(out int bookId, out string? title, out string? author, 
+        //                        out string? description, out string? genre) // ?  .
+        //{
+        //    bookId = BookId; 
+        //    title = Title;
+        //    author = Author;
+        //    description = Description;
+        //    genre = Genre;
+        //}
     }
 }

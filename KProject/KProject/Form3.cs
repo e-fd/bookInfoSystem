@@ -15,7 +15,7 @@ namespace KProject
     {
         public About()
         {
-            InitializeComponent();
+            InitializeComponent(); // инициализация компонента - открытие окна, загрузка элементов
             this.Text = String.Format("О программе {0}", AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
             this.labelVersion.Text = String.Format("Версия {0}", AssemblyVersion);
