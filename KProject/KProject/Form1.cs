@@ -20,7 +20,7 @@ namespace KProject
         {
             InitializeComponent(); // инициализация компонента - открытие окна, загрузка элементов
             comboBox1.Items.Clear(); // очистка списка жанров книг
-            comboBox1.Items.Add("");                 // добавление жанров книг
+            comboBox1.Items.Add("");                           // добавление жанров книг
             comboBox1.Items.Add("Роман-эпопея");               //
             comboBox1.Items.Add("Роман");                      //
             comboBox1.Items.Add("Повесть");                    //
@@ -37,7 +37,7 @@ namespace KProject
             comboBox1.Items.Add("Драма");                      //
             comboBox1.Items.Add("Поэма");                      //
             comboBox1.Items.Add("Баллада");                    //
-            comboBox1.SelectedIndex = 0;                // индекс изначально выбранного элемента
+            comboBox1.SelectedIndex = 0;    // индекс изначально выбранного элемента
             string fileName = "Default.db"; // дефолтная база данных
             try
             {
@@ -55,12 +55,13 @@ namespace KProject
                             // пополнение списка книг
                             Book book = new Book(buffer[0], buffer[1], buffer[2], buffer[3]);
                             // создание нового объекта класса Book, заполнение всех его параметров
-                            book.SetListIndex(listBox1.Items.Count);
+                            book.SetListIndex(listBox1.Items.Count); // установка значения listIndex
                             books[book.BookId] = book;
                         }
                     }
                 }
-                toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count;
+                toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count; // установка значения
+                                                                                   // количества книг в списке
             }
             catch { } // файл БД не загрузится в случае ошибки; список книг окажется пустым
         }
@@ -75,7 +76,7 @@ namespace KProject
                     addBook.ReturnGenre(), addBook.ReturnDescription());
                 books[book.BookId] = book;                    // запись созданного объекта в массив книг
                 listBox1.Items.Add(" \"" + book.Title + "\"  " + book.Author); // пополнение списка книг
-                book.SetListIndex(listBox1.Items.Count);
+                book.SetListIndex(listBox1.Items.Count); // установка значения listIndex
             }
             addBook.Close();        // закрытие окна Добавление новой книги
         }
@@ -107,7 +108,7 @@ namespace KProject
                                 string[] buffer = sr.ReadLine().Split('|');
                                 listBox1.Items.Add(" \"" + buffer[0] + "\"  " + buffer[1]);
                                 Book book = new Book(buffer[0], buffer[1], buffer[2], buffer[3]);
-                                book.SetListIndex(listBox1.Items.Count);
+                                book.SetListIndex(listBox1.Items.Count); // установка значения listIndex
                                 books[book.BookId] = book;
                             }
                         }
@@ -185,7 +186,7 @@ namespace KProject
             AddBook addBook = new AddBook(); // создание нового объекта окна Добавление новой книги
             int index = listBox1.SelectedIndex; // переменная, которой присваивается значение 
             if (index != -1)                    // индекса выбранной для редактирования книги
-            {                                                     // присваивание текстовым полям окна Добавление
+            {                                                     
                 foreach (var book in books)
                 {
                     if ((index + 1) == book.GetListIndex())
@@ -193,9 +194,8 @@ namespace KProject
                         index = book.BookId;
                         break;
                     }
-                }
-
-                addBook.SetTitle(books[index].Title);             // новой книги заданных значений
+                }                                                 // присваивание текстовым полям окна Добавление
+                addBook.SetTitle(books[index].Title);             // значений выбранной книги
                 addBook.SetAuthor(books[index].Author);           //
                 addBook.SetGenre(books[index].Genre);             //
                 addBook.SetDescription(books[index].Description); //
@@ -212,17 +212,18 @@ namespace KProject
                         if (book != null)       // если элемент book не пустой
                         {                       // заполяем список книг, используя поля элементов массива books
                             listBox1.Items.Add(" \"" + book.Title + "\"  " + book.Author);
-                            book.SetListIndex(listBox1.Items.Count);
+                            book.SetListIndex(listBox1.Items.Count); // установка значения listIndex
                         }
                     }
-                    toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count;
+                    toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count; // установка значения
+                                                                                       // количества книг в списке
                 }
             }
             addBook.Close(); // закрытие окна Добавление новой книги
         }
 
         private void удалитьКнигуToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        { // метод, срабатывающий при нажатии 'редактировать / удалить книгу'
             int index = listBox1.SelectedIndex; // переменная, которой присваивается значение 
             if (index != -1)                    // индекса выбранной для удаления книги
             {
@@ -252,7 +253,6 @@ namespace KProject
                         }
                     }
                     i++;
-                    //bookRemove = false;
                 }
                 books[num] = null;
                 listBox1.Items.Clear();         // очистка списка книг
@@ -261,10 +261,11 @@ namespace KProject
                     if (book != null)       // если элемент book не пустой
                     {                       // заполяем список книг, используя поля элементов массива books
                         listBox1.Items.Add(" \"" + book.Title + "\"  " + book.Author);
-                        book.SetListIndex(listBox1.Items.Count);
+                        book.SetListIndex(listBox1.Items.Count); // установка значения listIndex
                     }
                 }
-                toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count;
+                toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count; // установка значения
+                                                                                   // количества книг в списке
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -278,11 +279,12 @@ namespace KProject
                     if (book != null)
                     {
                         if (book.Title.IndexOf(substring) >= 0)
-                        {
+                        { // заполяем список книг, используя поля элементов массива books
                             listBox1.Items.Add(" \"" + book.Title + "\"  " + book.Author);
-                            book.SetListIndex(listBox1.Items.Count);
+                            book.SetListIndex(listBox1.Items.Count); // установка значения listIndex
                         }
-                        toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count;
+                        toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count; // установка значения
+                                                                                           // количества книг в списке
                     }
                 }
             }
@@ -294,10 +296,11 @@ namespace KProject
                     if (book != null)       // если элемент book не пустой
                     {                       // заполяем список книг, используя поля элементов массива books
                         listBox1.Items.Add(" \"" + book.Title + "\"  " + book.Author);
-                        book.SetListIndex(listBox1.Items.Count);
+                        book.SetListIndex(listBox1.Items.Count); // установка значения listIndex
                     }
                 }
-                toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count;
+                toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count; // установка значения
+                                                                                   // количества книг в списке
             }
         }
 
@@ -312,11 +315,12 @@ namespace KProject
                     if (book != null)
                     {
                         if (book.Author.IndexOf(substring) >= 0)
-                        {
+                        { // заполяем список книг, используя поля элементов массива books
                             listBox1.Items.Add(" \"" + book.Title + "\"  " + book.Author);
-                            book.SetListIndex(listBox1.Items.Count);
+                            book.SetListIndex(listBox1.Items.Count); // установка значения listIndex
                         }
-                        toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count;
+                        toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count; // установка значения
+                                                                                           // количества книг в списке
                     }
                 }
             }
@@ -328,10 +332,11 @@ namespace KProject
                     if (book != null)       // если элемент book не пустой
                     {                       // заполяем список книг, используя поля элементов массива books
                         listBox1.Items.Add(" \"" + book.Title + "\"  " + book.Author);
-                        book.SetListIndex(listBox1.Items.Count);
+                        book.SetListIndex(listBox1.Items.Count); // установка значения listIndex
                     }
                 }
-                toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count;
+                toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count; // установка значения
+                                                                                   // количества книг в списке
             }
         }
 
@@ -346,11 +351,12 @@ namespace KProject
                     if (book != null)
                     {
                         if (book.Genre.IndexOf(substring) >= 0)
-                        {
+                        { // заполяем список книг, используя поля элементов массива books
                             listBox1.Items.Add(" \"" + book.Title + "\"  " + book.Author);
-                            book.SetListIndex(listBox1.Items.Count);
+                            book.SetListIndex(listBox1.Items.Count); // установка значения listIndex
                         }
-                        toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count;
+                        toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count; // установка значения
+                                                                                           // количества книг в списке
                     }
                 }
             }
@@ -362,10 +368,11 @@ namespace KProject
                     if (book != null)       // если элемент book не пустой
                     {                       // заполяем список книг, используя поля элементов массива books
                         listBox1.Items.Add(" \"" + book.Title + "\"  " + book.Author);
-                        book.SetListIndex(listBox1.Items.Count);
+                        book.SetListIndex(listBox1.Items.Count); // установка значения listIndex
                     }
                 }
-                toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count;
+                toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count; // установка значения
+                                                                                   // количества книг в списке
             }
 
         }
@@ -377,42 +384,159 @@ namespace KProject
         }
 
         private void chosenParameterSearch_Click(object sender, EventArgs e)
-        {
+        { // метод, срабатывающий при нажатии 'поиск по всем параметрам'
+            string substring1 = textBox1.Text;
+            string substring2 = textBox2.Text;
+            string substring3 = comboBox1.Text;
+            if (substring1.Length > 0 && substring2.Length > 0 && comboBox1.SelectedIndex != 0)
+            { // все три поля заполнены пользователем
+                listBox1.Items.Clear();
+                foreach (var book in books)
+                {
+                    if (book != null)
+                    {
+                        if (book.Title.IndexOf(substring1) >= 0 && 
+                            book.Author.IndexOf(substring2) >= 0 &&
+                            book.Genre.IndexOf(substring3) >= 0)
+                        { // заполяем список книг, используя поля элементов массива books
+                            listBox1.Items.Add(" \"" + book.Title + "\"  " + book.Author);
+                            book.SetListIndex(listBox1.Items.Count); // установка значения listIndex
+                        }
+                        toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count; // установка значения
+                                                                                           // количества книг в списке
+                    }
+                }
+            }
+            else
+            {
+                if (substring1.Length > 0 && substring2.Length > 0 && comboBox1.SelectedIndex == 0)
+                { // заполнены заголовок и автор
+                    listBox1.Items.Clear();
+                    foreach (var book in books)
+                    {
+                        if (book != null)
+                        {
+                            if (book.Title.IndexOf(substring1) >= 0 &&
+                                book.Author.IndexOf(substring2) >= 0)
+                            { // заполяем список книг, используя поля элементов массива books
+                                listBox1.Items.Add(" \"" + book.Title + "\"  " + book.Author);
+                                book.SetListIndex(listBox1.Items.Count); // установка значения listIndex
+                            }
+                            toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count; // установка значения
+                                                                                               // количества книг в списке
+                        }
+                    }
+                }
+                else
+                {
+                    if (substring1.Length == 0 && substring2.Length > 0 && comboBox1.SelectedIndex != 0)
+                    { // заполнены автор и жанр
+                        listBox1.Items.Clear();
+                        foreach (var book in books)
+                        {
+                            if (book != null)
+                            {
+                                if (book.Genre.IndexOf(substring3) >= 0 &&
+                                    book.Author.IndexOf(substring2) >= 0)
+                                { // заполяем список книг, используя поля элементов массива books
+                                    listBox1.Items.Add(" \"" + book.Title + "\"  " + book.Author);
+                                    book.SetListIndex(listBox1.Items.Count); // установка значения listIndex
+                                }
+                                toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count; // установка значения
+                                                                                                   // количества книг в списке
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (substring1.Length > 0 && substring2.Length == 0 && comboBox1.SelectedIndex != 0)
+                        { // заполнены заголовок и автор
+                            listBox1.Items.Clear();
+                            foreach (var book in books)
+                            {
+                                if (book != null)
+                                {
+                                    if (book.Title.IndexOf(substring1) >= 0 &&
+                                        book.Genre.IndexOf(substring3) >= 0)
+                                    { // заполяем список книг, используя поля элементов массива books
+                                        listBox1.Items.Add(" \"" + book.Title + "\"  " + book.Author);
+                                        book.SetListIndex(listBox1.Items.Count); // установка значения listIndex
+                                    }
+                                    toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count; // установка значения
+                                                                                                       // количества книг в списке
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (substring1.Length > 0 && substring2.Length == 0 && comboBox1.SelectedIndex == 0)
+                            { // заполнен заголовок
+                                this.button1_Click(sender, e); // вызов метода, срабатывающего при поиске по заголовку книги
+                            }
+                            if (substring1.Length == 0 && substring2.Length > 0 && comboBox1.SelectedIndex == 0)
+                            { // заполнен автор
+                                this.button2_Click(sender, e); // вызов метода, срабатывающего при поиске по автору книги
+                            }
+                            if (substring1.Length == 0 && substring2.Length == 0 && comboBox1.SelectedIndex != 0)
+                            { // заполнен жанр
+                                this.button3_Click(sender, e); // вызов метода, срабатывающего при поиске по жанру книги
+                            }
+                        }
+                    }
+                }
+                }
 
+            if (substring1.Length == 0 && substring2.Length == 0 && comboBox1.SelectedIndex == 0)
+            { // поля не заполнены
+                listBox1.Items.Clear();         // очистка списка книг
+                foreach (var book in books) // для каждого элемента (book) массива books
+                {
+                    if (book != null)       // если элемент book не пустой
+                    {                       // заполяем список книг, используя поля элементов массива books
+                        listBox1.Items.Add(" \"" + book.Title + "\"  " + book.Author);
+                        book.SetListIndex(listBox1.Items.Count); // установка значения listIndex
+                    }
+                }
+                toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count; // установка значения
+                                                                                   // количества книг в списке
+            }
         }
 
         private void clearTextBox_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
-            textBox2.Text = "";
-            comboBox1.SelectedIndex = 0;
+        { // метод, срабатывающий при нажатии 'очистить параметры поиска'
+            textBox1.Text = "";             // очистка полей поиска
+            textBox2.Text = "";             // 
+            comboBox1.SelectedIndex = 0;    //
             listBox1.Items.Clear();         // очистка списка книг
             foreach (var book in books) // для каждого элемента (book) массива books
             {
                 if (book != null)       // если элемент book не пустой
                 {                       // заполяем список книг, используя поля элементов массива books
                     listBox1.Items.Add(" \"" + book.Title + "\"  " + book.Author);
-                    book.SetListIndex(listBox1.Items.Count);
+                    book.SetListIndex(listBox1.Items.Count); // установка значения listIndex
                 }
             }
-            toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count;
+            toolStripStatusLabel3.Text = "Элементов: " + listBox1.Items.Count; // установка значения
+                                                                               // количества книг в списке
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            toolStripStatusLabel2.Text = listBox1.SelectedItem as string;
+        { // метод, срабытывающий при изменении значения индекса выбранной книги из списка listBox1
+          // вывод информации о выбранной книге в таблице
+            toolStripStatusLabel2.Text = listBox1.SelectedItem as string; // изменение текста в элементе
+                                         // в statusStrip1; отображение названия и автора выбранной книги
             int index = listBox1.SelectedIndex; // переменная, которой присваивается значение 
-            if (index != -1)                    // индекса выбранной для редактирования книги
-            {                                                     // присваивание текстовым полям окна Добавление
+            if (index != -1)                    // индекса выбранной для просмотра книги
+            {
                 foreach (var book in books)
                 {
                     if ((index + 1) == book.GetListIndex())
                     {
                         index = book.BookId;
-                        label8.Text = book.Title;             // новой книги заданных значений
-                        label9.Text = book.Author;             //
+                        label8.Text = book.Title;              // заполнение полей таблицы 
+                        label9.Text = book.Author;             // соответствующими значениями
                         label10.Text = book.Genre;             //
-                        textBox3.Text = book.Description;
+                        textBox3.Text = book.Description;      //
                         break;
                     }
                 }
