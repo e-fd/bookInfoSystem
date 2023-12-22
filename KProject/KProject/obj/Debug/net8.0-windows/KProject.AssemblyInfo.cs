@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Московский Политех")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Информационно-справочная система библиотеки")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+facb9a8250d39c1c05d0220533785b660d4f5a46")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+584ff70cb1b62b913aa82f13a0dc7a46cbc6a1e8")]
 [assembly: System.Reflection.AssemblyProductAttribute("bookInfoSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -50,14 +50,5 @@ namespace KProject
         {
             bookCounter = value;
         }
-        //public void BookInfo(out int bookId, out string? title, out string? author, 
-        //                        out string? description, out string? genre) // ?  .
-        //{
-        //    bookId = BookId; 
-        //    title = Title;
-        //    author = Author;
-        //    description = Description;
-        //    genre = Genre;
-        //}
     }
 }

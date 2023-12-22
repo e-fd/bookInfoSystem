@@ -438,7 +438,7 @@ namespace KProject
             MainMenuStrip = menuStrip1;
             Margin = new Padding(4, 3, 4, 3);
             Name = "Form1";
-            Text = "Информационно-справочная система библиотеки";
+            Text = "Информационная система библиотеки";
             FormClosing += Form1_FormClosing;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
